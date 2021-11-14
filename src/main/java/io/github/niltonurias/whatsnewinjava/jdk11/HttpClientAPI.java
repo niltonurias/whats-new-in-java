@@ -1,18 +1,24 @@
 package io.github.niltonurias.whatsnewinjava.jdk11;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import io.github.niltonurias.whatsnewinjava.support.TitleUtil;
+import lombok.AllArgsConstructor;
+import lombok.Data;
 
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
-import java.net.http.HttpHeaders;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 
 import static io.github.niltonurias.whatsnewinjava.support.JsonReader.convertJsonToObject;
 import static io.github.niltonurias.whatsnewinjava.support.JsonReader.convertObjectToJson;
 
+/**
+ * The new HTTP client from the java.net.http package was introduced in Java 9. <br>It has now become a standard feature in Java 11.
+ * <br><br>
+ * @since 11
+ * @see java.net.http.HttpClient
+ */
 public class HttpClientAPI {
     private static final HttpClient httpClient;
 
@@ -38,7 +44,7 @@ public class HttpClientAPI {
 
         HttpRequest request = HttpRequest
                 .newBuilder()
-                .POST(HttpRequest.BodyPublishers.ofString(convertObjectToJson(new Post("Test", "Body", 1, null))))
+                .POST(HttpRequest.BodyPublishers.ofString(convertObjectToJson(new Post(null, "Test", "Body", 1))))
                 .header("Content-type", "application/json")
                 .uri(URI.create("https://jsonplaceholder.typicode.com/posts"))
                 .build();
@@ -50,7 +56,7 @@ public class HttpClientAPI {
     public static void httpPut() throws IOException, InterruptedException {
         TitleUtil.makeTitle("httpPut feature");
 
-        String body = convertObjectToJson(new Post("Test", "Body", 1, 1));
+        String body = convertObjectToJson(new Post(1, "Test", "Body", 1));
 
         HttpRequest request = HttpRequest
                 .newBuilder()
@@ -60,7 +66,7 @@ public class HttpClientAPI {
                 .build();
 
         HttpResponse<String> response = httpClient.send(request, HttpResponse.BodyHandlers.ofString());
-        var post = convertJsonToObject(response.body(), Post.class);
+        Post post = convertJsonToObject(response.body(), Post.class);
         System.out.printf("(Response) code: %s, body: %s%n", response.statusCode(), post);
     }
 
@@ -86,6 +92,19 @@ public class HttpClientAPI {
         httpDelete();
     }
 
-    public record AnimeResponse(String anime, String character, String quote) {}
-    public record Post(String title, String body, Integer userId, Integer id) {}
+    @Data
+    static class AnimeResponse {
+        private String anime;
+        private String character;
+        private String quote;
+    }
+
+    @Data
+    @AllArgsConstructor
+    static class Post {
+        private Integer id;
+        private String title;
+        private String body;
+        private Integer userId;
+    }
 }

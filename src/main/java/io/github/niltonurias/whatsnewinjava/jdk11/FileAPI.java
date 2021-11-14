@@ -5,6 +5,13 @@ import java.nio.file.Files;
 import static io.github.niltonurias.whatsnewinjava.support.TitleUtil.makeTitle;
 import static io.github.niltonurias.whatsnewinjava.support.FileUtil.*;
 
+/**
+ * This new feature in Java 11 make easy to write and read in files,
+ * removing all repetitive code or 3° libs.
+ *
+ * @since 11
+ * @see java.nio.file.Files
+ */
 public class FileAPI {
     public static void writeString() throws IOException {
         makeTitle("writeString feature");
