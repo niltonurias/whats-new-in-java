@@ -20,8 +20,19 @@ public class TextBlockFeatures {
                ORDER BY `EMP_ID`, `LAST_NAME`;
                """;
 
+        String json = """
+                {
+                    "anime": "Cowboy Bebop",
+                    "character": "Spike Spiegel",
+                    "quote": "I love the type of woman who can kick my ***."
+                }
+                """;
+
         System.out.println(textWithBlock);
-        System.out.println("\n" + query);
+        System.out.println();
+        System.out.println(query);
+        System.out.println();
+        System.out.println(json);
     }
 
     public static void main(String[] args) {
