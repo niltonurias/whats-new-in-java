@@ -9,11 +9,11 @@ import static io.github.niltonurias.whatsnewinjava.support.TitleUtil.makeTitle;
  * <br><br>
  * @since 11
  */
-public class NestBasedClass {
+public class NestBasedClassFeature {
     private static void isNestmateOf() {
         makeTitle("isNestmateOf feature");
-        System.out.println("IsNestmateOf (true): " + NestBasedClass.class.isNestmateOf(NestBasedClass.NestedClass.class));
-        System.out.println("IsNestmateOf (false): " + NestBasedClass.class.isNestmateOf(String.class));
+        System.out.println("IsNestmateOf (true): " + NestBasedClassFeature.class.isNestmateOf(NestBasedClassFeature.NestedClass.class));
+        System.out.println("IsNestmateOf (false): " + NestBasedClassFeature.class.isNestmateOf(String.class));
     }
 
     public static void main(String[] args) {

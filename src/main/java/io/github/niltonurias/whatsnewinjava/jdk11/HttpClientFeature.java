@@ -19,7 +19,7 @@ import static io.github.niltonurias.whatsnewinjava.support.JsonReader.convertObj
  * @since 11
  * @see java.net.http.HttpClient
  */
-public class HttpClientAPI {
+public class HttpClientFeature {
     private static final HttpClient httpClient;
 
     static {

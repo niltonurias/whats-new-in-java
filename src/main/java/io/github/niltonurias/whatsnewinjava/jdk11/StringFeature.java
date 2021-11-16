@@ -13,7 +13,7 @@ import static io.github.niltonurias.whatsnewinjava.support.TitleUtil.makeTitle;
  * @since 11
  * @see java.lang.String
  */
-public class StringAPI {
+public class StringFeature {
     /**
      * The method <i>lines()</i> break the lines (separated by line terminators) from a string and return a stream.
      * <br><br>

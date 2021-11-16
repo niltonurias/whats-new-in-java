@@ -12,7 +12,7 @@ import static io.github.niltonurias.whatsnewinjava.support.FileUtil.*;
  * @since 11
  * @see java.nio.file.Files
  */
-public class FileAPI {
+public class FileFeature {
     public static void writeString() throws IOException {
         makeTitle("writeString feature");
         deleteAndCreateEmptyFile();

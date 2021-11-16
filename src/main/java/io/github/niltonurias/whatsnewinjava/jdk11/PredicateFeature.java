@@ -13,7 +13,7 @@ import static io.github.niltonurias.whatsnewinjava.support.TitleUtil.makeTitle;
  * @since 11
  * @see java.util.function.Predicate
  */
-public class PredicateAPI {
+public class PredicateFeature {
     public static void predicateNot() {
         makeTitle("predicateNot feature");
         List<String> array = Arrays.asList("Java", "\t \u2005", "Kotlin", " ");

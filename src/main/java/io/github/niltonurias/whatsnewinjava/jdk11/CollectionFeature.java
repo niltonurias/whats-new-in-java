@@ -14,7 +14,7 @@ import static io.github.niltonurias.whatsnewinjava.support.TitleUtil.makeTitle;
  * @see java.util.Collection
  * @since 11
  */
-public class CollectionAPI {
+public class CollectionFeature {
     private static void toArray() {
         makeTitle("toArray feature");
         Collection<String> list = Arrays.asList("Java", "Kotlin");

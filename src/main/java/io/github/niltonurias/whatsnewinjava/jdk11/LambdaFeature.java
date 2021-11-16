@@ -12,7 +12,7 @@ import java.util.stream.Collectors;
  * <br><br>
  * @since 11
  */
-public class LambdaAPI {
+public class LambdaFeature {
     public static void lambda() {
         BiFunction<Integer, Integer, Integer> summed = (var x, var y) -> x + y;
         System.out.println("Using lambda and function to sum two integer: " + summed.apply(1, 2));
